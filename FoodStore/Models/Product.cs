@@ -27,5 +27,7 @@ namespace FoodStore.Models
 
         public int? OnHandQty { get; set; }
 
+        public bool IsDeleted { get; set; }
+
     }
 }

@@ -50,11 +50,14 @@ namespace FoodStore.Controllers
             }
             ViewBag.CurrentFilter = searchString;
 
-            var products= from p in db.Products select p;
+            var products= from p in db.Products
+                          where p.IsDeleted==false
+                          select p;
 
             if (!string.IsNullOrEmpty(searchString))
-            {
-                products = products.Where(p =>p.Name.Contains(searchString));
+           {
+                //products = products.Where(p =>p.Name.Contains(searchString));
+                products = products.Where(p => p.Name.Contains(searchString));
             }
 
             switch (sortOrder)
@@ -200,7 +203,8 @@ namespace FoodStore.Controllers
             try
             {
                 var product = db.Products.Find(id);
-                db.Products.Remove(product);
+                product.IsDeleted = true;
+                //db.Products.Remove(product);
                 db.SaveChanges();
             }
             catch
