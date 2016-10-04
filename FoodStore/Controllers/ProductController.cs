@@ -14,20 +14,6 @@ namespace FoodStore.Controllers
 {
     public class ProductController : Controller
     {
-        //Product[] products = new Product[]
-        //{
-        //    new Product { ID = 1, Name = "Tomato Kechup", Description = "Groceries", Price = 3.20M, Perishble=true, ExpiresOn=DateTime.Now.AddDays(20) },
-        //    new Product { ID = 2, Name = "GreenPeas", Description = "Groceries", Price = 2.30M,Perishble=true, ExpiresOn=DateTime.Now.AddDays(60) },
-        //    new Product { ID = 3, Name = "Sugar", Description = "Groceries", Price = 4, Perishble=false },
-        //    new Product { ID = 4, Name = "Salt", Description = "Groceries", Price = 3,Perishble=false },
-        //    new Product { ID = 5, Name = "Eggs", Description = "Groceries", Price = 6,Perishble=true,ExpiresOn=DateTime.Now.AddDays(30) }
-        //};
-
-        //public IEnumerable<Product> GetAllProducts()
-        //{
-        //      return products;
-        //}
-
         private ProductContext db = new ProductContext();
 
         // GET: Product
