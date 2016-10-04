@@ -136,12 +136,12 @@ namespace FoodStore.Controllers
 
         // POST: Product/Edit/5
         [HttpPost, ActionName("Edit")]
-        [ValidateAntiForgeryToken]
-        public ActionResult EditPost(int? id)
+        //[ValidateAntiForgeryToken]
+        public JsonResult EditPost(int? id)
         {
             if (id == null)
             {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+                return new JsonResult() { Data = new { Message = "bad request" }, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
             }
             var productid_toupdate = db.Products.Find(id);
             if (TryUpdateModel(productid_toupdate))
@@ -159,7 +159,8 @@ namespace FoodStore.Controllers
             }
             //return View(productid_toupdate);
             db.SaveChanges();
-            return RedirectToAction("Index");
+            return new JsonResult() { Data = new { message = "ok" }, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+            //return RedirectToAction("Index");
         }
 
         // GET: Product/Delete/5

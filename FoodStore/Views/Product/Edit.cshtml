@@ -7,10 +7,11 @@
 <h2>Edit</h2>
 
 
-@using (Html.BeginForm())
-{
+@*@using (Html.BeginForm())
+    {*@
+<form id="frmProduct">
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Product</h4>
         <hr />
@@ -68,11 +69,11 @@
         </div>
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Save" id="btnSubmit" class="btn btn-default" />
             </div>
         </div>
     </div>
-}
+</form>
 
 <div>
     @Html.ActionLink("Back to List", "Index")
@@ -80,4 +81,15 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/scripts/custom/product.js")
+
+    <script>
+        $(document).ready(function () {
+            $("#btnSubmit").click(function () {
+                if ($('form').valid()) {
+                    updateProduct();
+                }
+            });
+        });
+    </script>
 }
