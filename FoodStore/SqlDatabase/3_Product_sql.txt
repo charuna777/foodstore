@@ -1,0 +1,10 @@
+insert into dbo.Product (Name,Description,Price,Perishble,ExpiresOn,OnHandQty) 
+values
+ ('Tomato Kechup','Beautiful Red Kechup','3',1,'10/22/2016',1)
+,('GreenPeas','Lovely Greens',cast('2.20' as money),1,'11/1/2016',2)
+,('Sugar','Sugar Cane',cast('3.39' as money),0,'',3)
+,('Salt','Black Salt','4',0,'',5)
+,('Eggs','Groceries','6',1,'12/10/2016',4)
+,('Waffles','Costco 72 Pack','12',1,'12/1/2016',2)
+,('Spinach','Organic','5',1,'10/20/2016',1)
+,('Milk','Groceries',cast('2.25' as money),1,'1/1/2017',1)

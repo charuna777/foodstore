@@ -248,6 +248,9 @@
     <Content Include="Scripts\toastr.js" />
     <Content Include="Scripts\toastr.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="SqlDatabase\1_create_database.sql" />
+    <Content Include="SqlDatabase\2_create_table.sql" />
+    <Content Include="SqlDatabase\3_Product_sql.txt" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
